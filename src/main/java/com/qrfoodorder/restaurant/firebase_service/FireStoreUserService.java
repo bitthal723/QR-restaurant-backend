@@ -106,6 +106,8 @@ public class FireStoreUserService {
         map.put("email",email);
         map.put("rest_name",restaurantName);
         map.put("menu",new ArrayList<MenuItem>());
+        map.put("total_qr_generated", 0);
+        map.put("total_qr_scanned", 0);
         documentReference.set(map);
     }
     private void setOrderCollection(String restaurantId){

@@ -33,7 +33,7 @@ public class SecurityConfig {
         return httpSecurity
                 .cors(Customizer.withDefaults())
                 .csrf(customizer -> customizer.disable())
-                .authorizeHttpRequests(request -> request.requestMatchers("user/sign-up" , "user/sign-in", "user/getRestId")
+                .authorizeHttpRequests(request -> request.requestMatchers("user/sign-up" , "user/sign-in", "user/getRestId", "QR/getTableCount", "QR/addTable", "QR/getQRScannedCount")
                         .permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
