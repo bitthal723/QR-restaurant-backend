@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class  UserController {
     @Autowired
     UserService userService;
 
@@ -23,11 +23,12 @@ public class UserController {
 
     @PostMapping("/sign-in")
     public ResponseEntity<String> signIn(@RequestBody UserCredentials userCredentials) {
+        System.out.println(userCredentials.getEmail());
         return ResponseEntity.ok(userService.signIn(userCredentials));
     }
 
-    @GetMapping("/getRestId")
-    public ResponseEntity<String> getRestId(@RequestBody String email) throws ExecutionException, InterruptedException {
-        return ResponseEntity.ok(userService.getRestaurantId(email));
+    @PostMapping("/getRestId")
+    public ResponseEntity<String> getRestId(@RequestBody UserCredentials userCredentials) throws ExecutionException, InterruptedException {
+        return ResponseEntity.ok(userService.getRestaurantId(userCredentials.getEmail()));
     }
 }

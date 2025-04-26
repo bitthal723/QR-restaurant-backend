@@ -7,8 +7,6 @@ import com.qrfoodorder.restaurant.model.MenuItem;
 import com.qrfoodorder.restaurant.model.User;
 import com.qrfoodorder.restaurant.model.UserCredentials;
 import org.springframework.stereotype.Service;
-
-import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
