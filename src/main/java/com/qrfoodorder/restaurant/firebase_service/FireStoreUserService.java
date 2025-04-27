@@ -44,7 +44,7 @@ public class FireStoreUserService {
                 emailList.add(documentSnapshot.getId());
             }
         }catch (Exception e){
-            throw new RuntimeException();
+            System.out.println("error"+e.getMessage());
         }
         return emailList.contains(email);
     }

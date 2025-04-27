@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+@CrossOrigin(origins = "http://localhost:3001")
 @RestController
 @RequestMapping("/restaurant")
 public class RestaurantController {
